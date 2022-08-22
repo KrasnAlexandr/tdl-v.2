@@ -25,13 +25,13 @@ function editTask (evt) {
     editMode(parentLi);
 }
 
-function editMode (li) {
-    inputForm.value  = li.querySelector('.task__text').textContent;
+function editMode (parentLi) {
+    inputForm.value  = parentLi.querySelector('.task__text').textContent;
     inputForm.focus();
     formBtn.textContent = 'save';
     formBtn.style.background = 'yellow';
 
-    editedTask = li
+    editedTask = parentLi
 }
 
 function deleteTask (evt) {
@@ -59,20 +59,20 @@ function submitTask (evt) {
     evt.preventDefault();
 
     if (inputForm.value >= 1) {
-        const taskText = inputForm.value;
-
         if (editedTask) {
-            editedTask.querySelector('.task__text').textContent = taskText;
+            editedTask.querySelector('.task__text').textContent = inputForm.value;
+
         } else {
-            addTask(createTask(taskText));
+            addTask(createTask(inputForm.value));
         }
     }
 
     normalizeForm()
 }
 
-normalizeForm()
-
 formTask.addEventListener('submit', submitTask);
-deleteAllTaskButton.addEventListener('click', () => taskList.innerHTML = '');
+deleteAllTaskButton.addEventListener('click', function() {
+    taskList.innerHTML = ''
+    normalizeForm()
+});
 
