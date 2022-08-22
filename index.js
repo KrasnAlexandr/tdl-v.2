@@ -55,7 +55,9 @@ function normalizeForm () {
     formBtn.style.background = 'rgb(124, 227, 123, 0.5)';
 }
 
-function submitTask () {
+function submitTask (evt) {
+    evt.preventDefault();
+
     if (inputForm.value >= 1) {
         if (editedTask) {
             editedTask.querySelector('.task__text').textContent = inputForm.value;
@@ -67,7 +69,7 @@ function submitTask () {
     }
 }
 
-formBtn.addEventListener('click', submitTask);
+formTask.addEventListener('submit', submitTask);
 deleteAllTaskButton.addEventListener('click', function() {
     taskList.innerHTML = ''
     normalizeForm()
