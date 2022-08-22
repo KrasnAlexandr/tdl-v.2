@@ -71,6 +71,8 @@ function submitTask (evt) {
     normalizeForm()
 }
 
+normalizeForm()
+
 formTask.addEventListener('submit', submitTask);
 deleteAllTaskButton.addEventListener('click', () => taskList.innerHTML = '');
 
