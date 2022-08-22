@@ -23,6 +23,7 @@ function createTask (text) {
 function editTask (evt) {
     const parentLi = evt.target.closest('.task__items');
     editMode(parentLi);
+    console.log('click edit button')
 }
 
 function editMode (parentLi) {
@@ -37,6 +38,7 @@ function editMode (parentLi) {
 function deleteTask (evt) {
     const parentLi = evt.target.closest('.task__items');
     parentLi.remove();
+    console.log('click delete button')
 }
 
 function addListenerForTask (task) {
@@ -55,9 +57,7 @@ function normalizeForm () {
     formBtn.style.background = 'rgb(124, 227, 123, 0.5)';
 }
 
-function submitTask (evt) {
-    evt.preventDefault();
-
+function submitTask () {
     if (inputForm.value >= 1) {
         if (editedTask) {
             editedTask.querySelector('.task__text').textContent = inputForm.value;
@@ -68,11 +68,13 @@ function submitTask (evt) {
     }
 
     normalizeForm()
+    console.log('click add button')
 }
 
-formTask.addEventListener('submit', submitTask);
+formBtn.addEventListener('click', submitTask);
 deleteAllTaskButton.addEventListener('click', function() {
     taskList.innerHTML = ''
     normalizeForm()
+    console.log('click delete all button')
 });
 
