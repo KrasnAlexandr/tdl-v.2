@@ -30,6 +30,13 @@
     border-radius: 15px;
 }
 
+@media screen and (max-width: 680px){
+    .root {
+        max-width: calc(100% - 11px*2);
+        min-width: calc(100% - 11px*2);
+    }
+}
+
 .title {
     margin: 0 0 22px 0;
     padding: 0;

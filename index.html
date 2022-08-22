@@ -11,33 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
 </head>
 <body class="body">
+    <div class="root">
+        <h1 class="title">todos v.2</h1>
 
-<h1 class="title">todos v.2</h1>
+        <form class="task">
+            <input class="task__input" placeholder="what needs to be done?" type="text" name="username" minlength="1" maxlength="50">
+            <button type="submit" class="task__btn">add</button>
+        </form>
 
-<div class="root">
-    <form class="task">
-        <input class="task__input" placeholder="what needs to be done?" type="text" name="username" minlength="1" maxlength="50">
-        <button type="submit" class="task__btn">add</button>
-    </form>
+        <ul class="task__list">
+            <template id="template">
+                <li class="task__items">
+                    <p class="task__text">123</p>
+                    <div class="task__btn-container">
+                        <button type="button" class="task__edit"></button>
+                        <button type="button" class="task__deleted"></button>
+                    </div>
+                </li>
+            </template>
+            <!-- area for tasks -->
+        </ul>
 
-    <ul class="task__list">
-        <template id="template">
-            <li class="task__items">
-                <p class="task__text">123</p>
-                <div class="task__btn-container">
-                    <button type="button" class="task__edit"></button>
-                    <button type="button" class="task__deleted"></button>
-                </div>
-            </li>
-        </template>
-        <!-- area for tasks -->
-    </ul>
+        <button type="button" class="del-btn">delete all</button>
+    </div>
 
-
-
-    <button type="button" class="del-btn">delete all</button>
-</div>
-
-<script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
