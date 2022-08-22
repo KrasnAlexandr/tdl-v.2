@@ -50,10 +50,10 @@ function addTask (task, container = taskList) {
 
 function normalizeForm () {
     editedTask = null;
-    inputForm.value = '';
     formBtn.textContent = 'add';
     formBtn.style.background = 'rgb(124, 227, 123, 0.5)';
 }
+
 
 function submitTask (evt) {
     evt.preventDefault();
@@ -65,13 +65,11 @@ function submitTask (evt) {
         } else {
             addTask(createTask(inputForm.value));
         }
-        normalizeForm()
     }
+
+    inputForm.value = '';
 }
 
 formTask.addEventListener('submit', submitTask);
-deleteAllTaskButton.addEventListener('click', function() {
-    taskList.innerHTML = ''
-    normalizeForm()
-});
+deleteAllTaskButton.addEventListener('click', () => taskList.innerHTML = '');
 
