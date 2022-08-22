@@ -58,7 +58,7 @@ function normalizeForm () {
 function submitTask (evt) {
     evt.preventDefault();
 
-    if (inputForm.value >= 1) {
+    if (inputForm.value.length >= 1) {
         if (editedTask) {
             editedTask.querySelector('.task__text').textContent = inputForm.value;
             normalizeForm()
@@ -72,4 +72,3 @@ function submitTask (evt) {
 
 formTask.addEventListener('submit', submitTask);
 deleteAllTaskButton.addEventListener('click', () => taskList.innerHTML = '');
-
