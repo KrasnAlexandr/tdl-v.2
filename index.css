@@ -92,7 +92,8 @@
 }
 
 .task__text {
-
+    width: calc(100% - 100px);
+    overflow: auto;
 }
 
 .task__deleted {
