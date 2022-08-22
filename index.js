@@ -64,10 +64,10 @@ function submitTask () {
         } else {
             addTask(createTask(inputForm.value));
         }
-    }
 
-    normalizeForm()
-    console.log('click add button')
+        normalizeForm()
+        console.log('click add button')
+    }
 }
 
 formBtn.addEventListener('click', submitTask);
