@@ -61,7 +61,6 @@ function submitTask () {
     if (inputForm.value >= 1) {
         if (editedTask) {
             editedTask.querySelector('.task__text').textContent = inputForm.value;
-
         } else {
             addTask(createTask(inputForm.value));
         }
